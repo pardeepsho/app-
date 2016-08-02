@@ -1,0 +1,71 @@
+
+<div class="cf body-content">
+    <div class="content-wrapper" id="content-wrapper" role="main">
+        <form novalidate="novalidate" class="form" autocomplete="off" name="signupform" ng-init="vm.isvalid=false" ng-submit="vm.submit(signupform)" >
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 form-group">
+                    <label for="Firstname">First Name:</label>
+                    <input type="text" class="col-md-12 col-sm-12"  value="" id="Firstname" name="Firstname" minlength="1" maxlength="50" ng-pattern='/^[a-zA-Z]*$/' placeholder="Please enter letters only" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Please enter letters only'"  ng-model="vm.signupform.firstName" required="required" />
+                    <p ng-show="vm.isInvalid(signupform.Firstname)" class="errorMsg">Please enter a valid First Name</p>
+                </div>
+
+                <div class="col-md-4 col-sm-4 form-group">
+                    <label for="Lastname">Last Name:</label>
+                    <input id="Lastname" type="text" class="col-md-12 col-sm-12"  value="" name="Lastname" minlength="1" maxlength="50" ng-pattern='/^[a-zA-Z]*$/' ng-model="vm.signupform.lastName" placeholder="Please enter letters only" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Please enter letters only'" required="required" />
+                    <p ng-show="vm.isInvalid(signupform.Lastname)" class="errorMsg">Please enter a valid Last Name</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 form-group">
+                    <label for="birthday">Birthday:</label>
+                    <md-content class="datepicker-wrapper">
+                        <md-datepicker-custom ng-keypress="vm.isvalid=true" ng-model="vm.signupform.myDate" class="md-datepicker-custom-aria" md-placeholder="Please enter your birthday date" onfocus="this.md-placeholder = ''" onblur="this.md-placeholder = 'Please enter your birthday date'"
+                                              md-min-date="vm.minDate" md-max-date="vm.maxDate" md-custom-required="true" md-custom-default-date="{{::vm.defaultDate}}" md-custom-mask="99/99/9999" md-custom-clean-mask="false" md-custom-restrict="reject"  required="required" name="birthday">
+                        </md-datepicker-custom>
+                    </md-content>
+
+                <div class="dateValidationError" ng-if="vm.isvalid" ng-messages="signupform.birthday.$error">
+                    <div class="errorMsg" ng-message="mindate">Your age is above 150</div>
+                    <div class="errorMsg" ng-message="maxdate">Your age is below 18</div>
+                    <div class="errorMsg" ng-message="valid">Entered birthday date is Incorrect</div>
+                    <div class="errorMsg" ng-message="required">Enter your birthday date</div>
+
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 form-group">
+                    <label for="email" >Email Address:</label>
+                    <input id="email" type="email" name="email"   class="col-md-12 col-sm-12" value="" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" minlength="1" placeholder="Please enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Please enter your email'" maxlength="100"  ng-model="vm.signupform.email" required="required"/>
+                    <p ng-show="vm.isInvalid(signupform.email)&&signupform.email.$touched" class="errorMsg">Please enter a valid email address</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 form-group">
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" name="password"   class="col-md-12 col-sm-12" value="" minlength="6"  maxlength="100" ng-pattern="/^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,}).{6,}$/" placeholder="Please enter one uppercase letter, one number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Please enter one uppercase letter, one number'" ng-model="vm.signupform.password" required="required"/>
+                    <p class="inputInfo">Your password should contain atleast 6 characters</p>
+                    <p ng-show="signupform.password.$invalid&&signupform.password.$touched" class="errorMsg">Please enter a valid password</p>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-4 form-group">
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input id="confirmpassword" type="password" name="confirmpassword"  class="col-md-12 col-sm-12" value="" minlength="1"  maxlength="100" placeholder="Please confirm your password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Please confirm your password'" ng-model="vm.signupform.confirmpassword" required="required"/>
+                    <p ng-show="(vm.signupform.password!==vm.signupform.confirmpassword)&&(signupform.confirmpassword.$touched ||signupform.$submitted)" class="errorMsg">Your password does not match</p>
+                </div>
+            </div>
+            
+        <div class="row pull-right continueNext">
+            <button type="reset" class="btn btn-danger" ng-click="vm.dis=true">Reset</button>
+            <button type="submit" class="btn btn-success"  ng-disabled="vm.dis||!signupform.$valid || vm.signupform.password!==vm.signupform.confirmpassword" >Submit</button>
+        </div>
+     </form>
+    </div>
+</div>

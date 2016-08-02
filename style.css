@@ -1,0 +1,116 @@
+.container-fluid{
+width: 800px;
+border: 1px solid #bcb;
+margin: auto;
+padding: 0;
+background-color: #eee;
+}
+.content-wrapper {
+background: #fff;
+}
+.content-wrapper .form {
+margin-top: 10%;
+margin-bottom: 10%;
+padding: 8px;
+}
+.content-wrapper md-content {
+height: 30px;
+border: 1px solid #aaa;
+overflow: hidden;
+}
+.content-wrapper .md-button.md-icon-button {
+line-height: 18px;
+}
+.content-wrapper .md-datepicker-input-container {
+margin-left: 0;
+border-bottom: none;
+padding: 7px;
+}
+.content-wrapper md-datepicker {
+vertical-align: top;
+}
+.datepickerdemoBasicUsage {
+font-size: 11px;
+color: darkred;
+margin: 10px 0 0 25px;
+}
+.md-datepicker-calendar-icon {
+position: absolute;
+margin-top: -17px;
+}
+.md-datepicker-triangle-button.md-button.md-icon-button {
+display: none;
+}
+.md-datepicker-calendar-pane.md-pane-open {
+top: 326px;
+}
+.md-datepicker-input-mask {
+display: none;
+}
+.md-datepicker-input-container .md-datepicker-input {
+min-width: 150px;
+width: 100%;    
+position: absolute;
+margin-top: -5px;
+padding-left: 8px;
+}
+.md-button.md-icon-button {
+height: 24px;
+margin: 0;
+padding: 0;
+width: 24px;
+float: right;
+}
+.md-button {
+min-height: 28px;
+}
+.disable{
+display: none;
+}
+.errorMsg {
+font-size: 80%;
+color: #ff0000;
+font-style: italic;
+font-weight: bold;
+}
+.margin-top{
+margin-top: 50px;
+}
+.inputInfo {
+color: #666;
+font-size: 75%;
+font-style: italic;
+}
+::-webkit-input-placeholder {
+font-style: italic;
+font-size: 70%;
+margin-bottom: 3px;
+}
+/*for IE 10+*/
+:-ms-input-placeholder {
+font-style: italic;
+font-size: 60%;
+color: #666;
+line-height: 11px;
+}
+/*for mozilla 19+*/
+::-moz-placeholder {
+font-style: italic;
+font-size: 74%;
+}
+.continueNext {
+width: 160px;
+display: inline-block;
+}
+.continueNext button {
+margin-top: 32px;    
+}
+.buddyFirstName, .buddyLastName {
+margin-top: -15px;
+margin-bottom: 15px;
+padding-left: 28px;
+}
+.completeRow {
+width: 172px;
+margin-right: 30px;
+}

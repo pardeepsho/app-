@@ -1,0 +1,46 @@
+<div class="cf body-content">
+	<div class="content-wrapper" id="content-wrapper" role="main">
+		<div class="form">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 form-group">
+					<label for="Firstname">First Name:</label>
+					<p>{{vm.previewData.firstName}}</p>
+				</div>
+				
+				<div class="col-md-4 col-sm-4 form-group">
+					<label for="firstName">LastName:</label>
+					<p>{{vm.previewData.lastName}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4 form-group">
+					<label for="firstName">Email:</label>
+					<p>{{vm.previewData.email}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4 form-group">
+					<label for="firstName">Password:</label>
+					<p>xxxx{{vm.previewData.password.slice(-2)}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4 form-group">
+					<label for="firstName">Confirmpassword:</label>
+					<p>xxxx{{vm.previewData.confirmpassword.slice(-2)}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4 form-group">
+					<label for="firstName">Birthday date:</label>
+					<p>{{vm.previewData.myDate |date}}</p>
+				</div>
+			</div>
+
+		 <div class="row pull-right continueNext">
+            <button type="submit" class="btn btn-success"  ng-click="vm.buddylist()">Buddy List</button>
+        </div>
+		</div>
+	</div>
+</div>
+</div>
